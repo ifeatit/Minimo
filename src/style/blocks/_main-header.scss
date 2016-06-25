@@ -1,0 +1,42 @@
+.main-header {
+  position: relative;
+
+  &__logo {
+    height: 56px;
+  }
+
+  &__logo-link {
+    position: absolute;
+    display: block;
+    top: 12px;
+    left: calc-percent(20, $bp-xsmall);
+
+    & > h1 {
+      padding: 0;
+      margin: 0;
+      font-family: 'Inconsolata', Arial, sans-serif;
+      font-weight: 400;
+      font-size: calc-rem(30);
+      line-height: calc-lh(30,30);
+      text-transform: uppercase;
+      letter-spacing: (200/1000 + em);
+    }
+  }
+
+  @include bp-medium {
+    &__logo {
+      height: auto;
+
+      &-link {
+        position: initial;
+      }
+    }
+    padding-top: 70px;
+
+    &__container {
+      max-width: 1060px;
+      margin: 0 auto;
+      margin-bottom: 70px;
+    }
+  }
+}

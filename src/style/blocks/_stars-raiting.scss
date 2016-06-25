@@ -1,0 +1,43 @@
+.stars-raiting {
+  &__value {
+    padding: 3px 0;
+    margin-top: 5px;
+    font-size: calc-rem(14);
+    line-height: calc-lh(21, 14);
+    text-align: center;
+    color: $gray-darker;
+    background: $gray-light;
+  }
+
+  &__list {
+    margin: 0 auto;
+    margin-top: 5px;
+    
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    @include clearfix();
+
+    @include bp-medium {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item {
+    float: right;
+    margin-left: 5px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-left: 0;
+    }
+
+    &,
+    & > svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+      fill: $blue-base;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+/*------------------------------------*\
+    #UTILS - MIXINS
+\*------------------------------------*/
+
+//== Breakpoints
+//
+//## 
+
+@mixin bp-zero {
+  @media (min-width: #{$bp-zero}px) {
+    @content;
+  }
+}
+
+
+@mixin bp-xsmall {
+  @media (min-width: #{$bp-xsmall}px) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media (min-width: #{$bp-small}px) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media (min-width: #{$bp-medium}px) {
+    @content;
+  }
+}
+
+@mixin bp-large {
+  @media (min-width: #{$bp-large}px) {
+    @content;
+  }
+}
+
+@mixin bp-xlarge {
+  @media (min-width: #{$bp-xlarge}px) {
+    @content;
+  }
+}
+
+@mixin bp-xxlarge {
+  @media (min-width: #{$bp-xxlarge}px) {
+    @content;
+  }
+}
+
+// @mixin bp-low-dpi {
+//   @media (max-resolution: 192dpi) {
+//     @content;
+//   }
+// }
+
+@mixin image-2x($image/* , $width, $height */) {
+  @media (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi) {
+    background-image: url($image);
+    //background-size: $width $height;
+  }
+}
+
+//== Text
+//
+//## 
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin transition-all {
+  transition: 0.3s all;
+}
+
+
+// For use with the gulp sprite plugin
+@mixin svgSprite($icon, $type: all) {
+  @if $type == all {
+    // Shares the backgrounds
+    @extend %svgSprite;
+  }
+
+  $iconMap: icon-attr($icon);
+
+  // Outputs dimensions in em
+  @if $type == all or $type == size {
+    width: map-get($iconMap, width);
+    height: map-get($iconMap, height);
+  }
+  // Outputs background position in em
+  @if $type == all or $type == bg {
+    background-position: map-get($iconMap, x) map-get($iconMap, y);
+  }
+}
+

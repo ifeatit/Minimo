@@ -1,0 +1,39 @@
+.copyright {
+  font-size: 0;
+
+
+  &__item {
+    display: inline-block;
+  }
+
+  &__description {
+    display: inline-block;
+    font-size: calc-rem(14);
+    line-height: calc-lh(26,14);
+    vertical-align: middle;
+  }
+
+  &__link {
+    display: inline-block;
+    width: 28px;
+    height: 30px;
+    padding: 0 12px;
+    font-size: 0;
+    vertical-align: middle;
+    @include transition-all;
+
+    &:hover {
+      fill: $blue-base;
+    }
+  
+    &:active {
+      fill: #BDBBBC;
+    }
+
+    & > svg {
+      display: block;
+      width: 28px;
+      height: 30px;
+    }
+  }
+}

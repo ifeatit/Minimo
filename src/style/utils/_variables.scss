@@ -1,0 +1,94 @@
+/*------------------------------------*\
+    #UTILS - VARIABLES
+\*------------------------------------*/
+
+//== Colors
+//
+//## Main colors for use across project.
+
+$white:                 #FFFFFF;
+$black:                 #000000;
+$gray:                  #f0f0f0;             
+$gray-light:            #626262;
+$gray-more-light:       #b4ad9e; 
+
+$blue-base:             #626262; 
+$blue-dark:             #626262;
+$blue-darker:           #626262;
+$brown-base:            #626262;
+$brown-light:           #626262;
+$brown-lighter:         #626262;   
+$gray-dark:             #626262;
+$gray-darken:           #626262;  
+$gray-darker:           #626262;      
+        
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+
+//** Background color for `<body>`.
+$body-bg:               $white;
+//** Global text color on `<body>`.
+$text-color:            $gray-light;
+$label-color:           $white;
+
+//** Global textual link color.
+$link-color:            $gray-light;;
+$link-hover-color:      #CACACA;
+$link-active-color:     #CACACA;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'PlayfairDisplay', Arial, sans-serif;
+$font-ubuntu:             'Ubuntu', Arial, sans-serif;
+$font-family-base:        $font-family-sans-serif;
+$font-family-second:      $font-ubuntu;
+
+$font-size-browser:       16; 
+$font-size-base:          14;
+
+$line-height-base:        21 / $font-size-base; 
+
+
+//== Tables
+//
+//## Customizes the `.table` component with basic values, each used across all table variations.
+
+
+//== Forms
+//
+//##
+
+
+
+//== Dropdowns
+//
+//## Dropdown menu container and contents.
+
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+$bp-zero:               0;
+$bp-xsmall:             320;
+$bp-small:              480;
+$bp-medium:             768;
+$bp-large:              960;
+$bp-xlarge:             1280;
+$bp-xxlarge:            1440;
+
+
+//== Other
+//
+//##
+
+$shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+$transition-base: 0.3s all;
+
