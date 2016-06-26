@@ -1,0 +1,48 @@
+.social-links-list {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  list-style: none;
+
+  &__link {
+    display: block;
+    padding: 5px;
+    vertical-align: top;
+    background-color: transparent;
+    fill: $gray-light;
+
+    &--text-link {
+      font-size: calc-rem(14);
+      line-height: calc-lh(14, 14);
+      color: $black;
+    }
+
+    &:hover {
+      fill: $black;
+    }
+
+    &:active {
+      fill: $gray-light;
+    }
+
+    & > svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:last-of-type > .social-links-list__link {
+      padding-right: 0;
+    }
+  }
+}
+

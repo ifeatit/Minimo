@@ -1,0 +1,30 @@
+mixin post(title, pictureURL, pictureWidth, pictureHeight, category, content, href)
+  .grid__medium-col-1-2
+    +e.item
+      +e.A.picture-link(
+        href=href
+      )
+        +e.IMG.picture(
+          src=pictureURL
+          width=pictureWidth
+          height=pictureHeight
+        )
+      +e.A.category(
+        href=href
+      ) #{category}
+      +e.H2.title 
+        a(
+          href=href
+        ) #{title}
+      +e.P.content #{content}
+
+mixin navLink(link, name, disabled)
+  +e.LI.list-item
+    if disabled 
+      +e.A.list-link--disabled(
+        href=link
+      ) #{name}
+    else 
+      +e.A.list-link(
+        href=link
+      ) #{name}
