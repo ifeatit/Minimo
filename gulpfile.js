@@ -21,6 +21,8 @@ var gulp              = require('gulp'),
     svgSprite         = require('gulp-svg-sprite'),
     svgmin            = require('gulp-svgmin'),
     cheerio           = require('gulp-cheerio'),
+    reporter          = require('postcss-reporter'),
+    scss              = require('postcss-scss'),
     reload            = browserSync.reload;
 
 var path = {
@@ -120,8 +122,11 @@ gulp.task('stylelint', function () {
         reporters: [
           {formatter: 'string', console: true}
         ]
-      })
-    ]))
+      }),
+      reporter({ clearMessages: true })
+    ],
+    { syntax: scss }
+    ))
 });
 
 gulp.task('webserver', function () {

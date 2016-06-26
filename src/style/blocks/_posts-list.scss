@@ -1,16 +1,19 @@
 .posts-list {
-
-  &__main-post {
-    padding-top: 85px;
-    margin-bottom: 110px;
-  }
-
-  &__item {
-    margin-bottom: 105px;
-  }
-  
   padding-left: calc-percent(80, 1060);
   padding-right: calc-percent(80, 1060);
+
+  @include bp-medium {
+
+    &__main-post {
+      padding-top: 85px;
+      margin-bottom: 110px;
+    }
+
+    &__item {
+      margin-bottom: 105px;
+    }
+
+  }
 
   &__category {
     font-weight: normal;
