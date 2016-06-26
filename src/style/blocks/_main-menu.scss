@@ -1,8 +1,6 @@
-// .main-menu {
-//   position: relative;
-// }
-
-
+/* .main-menu {
+  position: relative;
+} */
 .main-menu__list {
   margin: 0;
   padding: 0;
@@ -10,12 +8,10 @@
   background-color: $white;
 }
 
-
 .main-menu__toggle {
   position: absolute;
   right: calc-percent(20, $bp-xsmall);
   display: inline-block;
-
 
   &,
   & > svg {
@@ -45,11 +41,12 @@
   }
 }
 
+@media screen and (max-width: # {
+}
 
-
-@media screen and (max-width: #{($bp-medium - 1)}px) {
+px) {
   .main-menu__list-item {
-    display: none;  
+    display: none;
     background-color: $black;
     border-bottom: 1px solid $white;
 
@@ -58,18 +55,16 @@
     }
   }
 
-
   .main-menu__toggle-checkbox[type="checkbox"] {
     &:checked ~ .main-menu__list .main-menu__list-item {
       display: block;
     }
-    
+
     &:checked ~ .main-menu__toggle--close {
       display: inline-block;
     }
   }
 }
-
 
 .main-menu__list-link {
   display: block;
@@ -80,14 +75,13 @@
   text-align: center;
   text-transform: uppercase;
 
-  
   &:hover {
     color: $white;
     background-color: $blue-dark;
   }
-  
+
   &:active {
-    color: #88B6D1;
+    color: #88b6d1;
     background-color: $blue-darker;
   }
 
@@ -95,7 +89,7 @@
   &--disabled:hover,
   &--disabled:active {
     color: #766357;
-    background-color: $black; 
+    background-color: $black;
     cursor: default;
   }
 
@@ -113,7 +107,6 @@
     max-height: 56px;
     font-size: 0;
 
-
     &-item {
       display: inline-block;
       margin: 0 calc-percent(35, 960);
@@ -122,12 +115,15 @@
       &:first-of-type {
         margin-left: 0;
       }
+
       &:last-of-type {
         margin-right: 0;
       }
+
       &:first-of-type > .main-menu__list-link {
         padding-left: 0;
       }
+
       &:last-of-type > .main-menu__list-link {
         padding-right: 0;
       }
@@ -138,29 +134,30 @@
         display: block;
         padding: 0 15px;
         font-size: calc-rem(14);
-        line-height: calc-lh(24,14);
+        line-height: calc-lh(24, 14);
         color: $gray-light;
         text-align: center;
-
       }
 
       &:hover {
         color: $black;
         background-color: transparent;
       }
-      
+
       &:active {
-        color: #B2B2B2;
+        color: #b2b2b2;
         background-color: transparent;
       }
-      
+
       &--active {
         color: $brown-base;
         cursor: default;
       }
+
       &--active:hover {
         color: $brown-base;
       }
+
       &--active:active {
         color: $brown-base;
       }
@@ -168,12 +165,11 @@
       &--disabled,
       &--disabled:hover,
       &--disabled:active {
-        color: #CCCCCC;
-        background-color: transparent; 
+        color: #cccccc;
+        background-color: transparent;
       }
     }
   }
-
 
   .main-menu__toggle {
     display: none;

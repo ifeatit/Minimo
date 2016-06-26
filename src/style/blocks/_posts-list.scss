@@ -1,9 +1,7 @@
 .posts-list {
   padding-left: calc-percent(80, 1060);
   padding-right: calc-percent(80, 1060);
-
   @include bp-medium {
-
     &__main-post {
       padding-top: 85px;
       margin-bottom: 110px;
@@ -12,14 +10,13 @@
     &__item {
       margin-bottom: 105px;
     }
-
   }
 
   &__category {
     font-weight: normal;
     font-family: $font-family-second;
     font-size: calc-rem(14);
-    line-height: calc-lh(14,14);
+    line-height: calc-lh(14, 14);
     color: $gray-more-light;
     text-transform: uppercase;
   }
@@ -33,12 +30,12 @@
     margin-bottom: 30px;
     font-weight: normal;
     font-size: calc-rem(28);
-    line-height: calc-lh(28,28);
+    line-height: calc-lh(28, 28);
   }
 
   &__content {
     margin-bottom: 45px;
     font-size: calc-rem(14);
-    line-height: calc-lh(24,14);
+    line-height: calc-lh(24, 14);
   }
 }

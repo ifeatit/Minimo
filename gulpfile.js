@@ -108,11 +108,15 @@ var svgSpriteConfig = {
 };
 
 gulp.task('cssfmt', function() {
-  gulp.src('src/style/main.scss')
+  gulp.src('src/style/**/*.s+(a|c)ss')
     .pipe(postcss([
       cssfmt()
-    ]))
-    .pipe(gulp.dest('src/style/main.scss'));
+    ],
+    { syntax: scss }
+    ))
+    .pipe(gulp.dest(function(file) {
+      return file.base;
+    }));
 });
 
 gulp.task('stylelint', function () {

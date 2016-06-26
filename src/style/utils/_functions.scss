@@ -2,32 +2,34 @@
   #UTILS - FUNCTIONS
 \*------------------------------------*/
 
-
 // Calculate rem
+
 @function calc-rem($pixels, $context: $font-size-browser) {
-  @return ($pixels / $context) + rem
+  @return ($pixels / $context) + rem;
 }
 
 // Calculate line-height
+
 @function calc-lh($pixels, $context) {
-  @return ($pixels / $context)
+  @return ($pixels / $context);
 }
 
 // Calculate percentage width
+
 @function calc-percent($pixels, $context) {
   @return ($pixels / $context) * 100%;
 }
 
-
 // Gets an attribute from the sass map
-
 $svg-sprite: map-get($svg-icons, svg-sprite) !default;
 
 @function sprite-attr($icon, $attr) {
   $newIcon: map-get($svg-icons, $icon);
+
   @if $newIcon == null {
-    @warn "Can't find an icon with the name #{$icon}";
+    @warn "Cant find an icon with the name #{$icon}";
   }
+
   @return map-get($newIcon, $attr);
 }
 
@@ -41,7 +43,6 @@ $svg-sprite: map-get($svg-icons, svg-sprite) !default;
 
   @return $attr;
 }
-
 
 // Sets background image 
 %svgSprite {

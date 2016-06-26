@@ -1,8 +1,6 @@
 /*------------------------------------*\
     #BASE - SCAFFOLDING
 \*------------------------------------*/
-
-
 :root {
   font-size: $font-size-browser+px;
   background-color: $body-bg;
@@ -22,7 +20,6 @@ body {
 }
 
 // Links
-
 a {
   color: $link-color;
   text-decoration: none;
@@ -31,12 +28,14 @@ a {
     color: $link-hover-color;
     text-decoration: none;
   }
+
   &:active {
     color: $link-active-color;
   }
 }
 
 /* Disable Animate.css for small devices, tablets */
+
 /* @media only screen and (max-width : 768px) {
   .animated {
     transition-property: none !important;

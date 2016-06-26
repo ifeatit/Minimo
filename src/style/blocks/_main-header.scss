@@ -17,12 +17,11 @@
       font-family: 'Inconsolata', Arial, sans-serif;
       font-weight: 400;
       font-size: calc-rem(30);
-      line-height: calc-lh(30,30);
+      line-height: calc-lh(30, 30);
       text-transform: uppercase;
-      letter-spacing: (200/1000 + em);
+      letter-spacing: (200 / 1000 + em);
     }
   }
-
   @include bp-medium {
     &__logo {
       height: auto;
