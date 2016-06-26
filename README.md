@@ -1,2 +1,0 @@
-# Minimo
-Blog template
