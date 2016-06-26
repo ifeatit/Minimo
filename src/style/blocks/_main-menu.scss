@@ -41,10 +41,7 @@
   }
 }
 
-@media screen and (max-width: # {
-}
-
-px) {
+@media screen and (max-width: ($bp-medium - 1 + px)) {
   .main-menu__list-item {
     display: none;
     background-color: $black;

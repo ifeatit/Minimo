@@ -91,13 +91,13 @@
 
   // Outputs dimensions in em
   @if $type == all or $type == size {
-    width: map-get($iconMap, width);
-    height: map-get($iconMap, height);
+    width: map-get($iconmap, width);
+    height: map-get($iconmap, height);
   }
 
   // Outputs background position in em
   @if $type == all or $type == bg {
-    background-position: map-get($iconMap, x) map-get($iconMap, y);
+    background-position: map-get($iconmap, x) map-get($iconmap, y);
   }
 }
 
