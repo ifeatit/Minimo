@@ -1,0 +1,168 @@
+- var description = 'Minimo'
+- var title = 'Minimo Blog - template'
+- var keywords = 'Minimo full responsive template'
+
+include template/config
+include template/layout
+
+block page
+  body.page
+    <!-- Inline SVG DOM -->
+    include template/sprite.symbol.html
+    +b.main-header
+      +e.container
+        .grid
+          .grid__medium-col-1-3
+            +e.logo
+              +e.A.logo-link(
+                href="index.html"
+              )
+                h1 Minimo
+          .grid__medium-col-2-3
+            +b.main-menu
+              +e.INPUT.toggle-checkbox(
+                type="checkbox", 
+                id="toogle-menu-checkbox", 
+                name="toogle-menu-checkbox"
+              ) 
+              +e.LABEL.toggle--open(
+                for="toogle-menu-checkbox"
+              ) <svg><use xlink:href="#icon-menu"/></svg>
+              +e.LABEL.toggle--close(
+                for="toogle-menu-checkbox"
+              ) <svg><use xlink:href="#icon-menu--close"/></svg>
+              //- +e.NAV.desktop-menu
+              //-   +e.UL.menu-list
+              //-     +navLink("#", "Lifestyle")
+              //-     +navLink("#", "Photodiary")
+              //-     +navLink("#", "Music")
+              //-     +navLink("#", "Travel", "disabled")
+              //- +e.NAV.mobile-menu
+              +e.UL.list
+                +navLink("#", "Lifestyle")
+                +navLink("#", "Photodiary")
+                +navLink("#", "Music")
+                +navLink("#", "Travel", "disabled")
+
+    +b.index-content
+      +e.container
+        +b.intro
+        +b.posts-list
+          +e.main-post
+            +e.A.category(
+              href="#"
+            ) photodiary
+            +e.H2.title 
+              a(
+                href="#"
+              ) The perfect weekend getaway
+            +e.P.content Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+            +e.btn.btn Leave a comment
+          +e.entry-posts
+            .grid 
+              +post(
+                "More than just a music festival",
+                "pic/post1.jpg", 
+                "100%",
+                "100%",
+                "lifestyle", 
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+                "#"
+              )
+              +post(
+                "Life tastes better with coffee",
+                "pic/post2.jpg", 
+                "100%",
+                "100%",
+                "lifestyle", 
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+                "#"
+              )
+              +post(
+                "American dream",
+                "pic/post3.jpg", 
+                "100%",
+                "100%",
+                "lifestyle", 
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+                "#"
+              )
+              +post(
+                "A day exploring the Alps",
+                "pic/post4.jpg", 
+                "100%",
+                "100%",
+                "lifestyle", 
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+                "#"
+              )
+      +b.subscribe
+        +e.title Sign up for our newsletter!
+        +e.FORM.form
+          +e.INPUT.input-text(type="text", placeholder="Enter a valid email address")
+          +e.BUTTON.btn-submit(
+            type="submit"
+          )
+      +e.container
+        +b.posts-list
+          +e.entry-posts
+            .grid 
+              +post(
+                "Top 10 song for running",
+                "pic/post5.jpg", 
+                "100%",
+                "100%",
+                "lifestyle", 
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+                "#"
+              )
+              +post(
+                "Cold winter days",
+                "pic/post6.jpg", 
+                "100%",
+                "100%",
+                "lifestyle", 
+                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea",
+                "#"
+              )  
+        +e.wrapper
+          +b.A.btn--secondary(
+            href="#"
+          ) Load more    
+    +b.main-footer
+      +e.container
+        .grid 
+          .grid__medium-col-1-2
+            +e.SECTION.copyright
+              +e.UL.copyright-list
+                +e.LI.copyright-item
+                  +e.A.copyright-link(
+                    href="#"
+                  ) Terms and conditions
+                  +e.A.copyright-link(
+                    href="#"
+                  ) Privacy
+
+          .grid__medium-col-1-2
+            +e.SECTION.social-links
+              +b.UL.social-links-list
+                +e.LI.item
+                  +e.A.link--text-link(
+                    href="#"
+                  ) Follow 
+                +e.LI.item
+                  +e.A.link(
+                    href="#"
+                  ) Facebook <svg><use xlink:href="#icon-fb"/></svg>
+                +e.LI.item
+                  +e.A.link(
+                    href="#"
+                  ) Twitter <svg><use xlink:href="#icon-tw"/></svg>
+                +e.LI.item
+                  +e.A.link(
+                    href="#"
+                  ) Instagram <svg><use xlink:href="#icon-instgr"/></svg>
+
+
+    script(src=scriptsLink)
+ 
