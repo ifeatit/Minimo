@@ -23,6 +23,7 @@ var gulp              = require('gulp'),
     cheerio           = require('gulp-cheerio'),
     reporter          = require('postcss-reporter'),
     scss              = require('postcss-scss'),
+    sorting           = require('postcss-sorting'),
     reload            = browserSync.reload;
 
 var path = {
@@ -107,9 +108,13 @@ var svgSpriteConfig = {
   }
 };
 
+
+// cssFormat and postcss-sorting
+
 gulp.task('cssfmt', function() {
   gulp.src('src/style/**/*.s+(a|c)ss')
     .pipe(postcss([
+      sorting({ "sort-order": "default" }),
       cssfmt()
     ],
     { syntax: scss }
@@ -141,13 +146,6 @@ gulp.task('clean', function (cb) {
   rimraf(path.clean, cb);
 });
 
-//gulp.task('html:build', function () {
-//  gulp.src(path.src.html)
-//    .pipe(rigger())
-//    .pipe(gulp.dest(path.build.html))
-//    .pipe(reload({stream: true}));
-//});
-
 gulp.task('htmlPug:build', function () {
   gulp.src(path.src.pug) 
     .pipe(plumber())
@@ -157,7 +155,6 @@ gulp.task('htmlPug:build', function () {
     .pipe(gulp.dest(path.build.pug))
     .pipe(reload({stream: true}));
 });
-
 
 gulp.task('js:build', function () {
   gulp.src(path.src.js) 

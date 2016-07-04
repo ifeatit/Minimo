@@ -42,6 +42,7 @@
     "lost": "^6.7.2",
     "postcss-reporter": "^1.3.3",
     "postcss-scss": "^0.1.8",
+    "postcss-sorting": "^1.6.1",
     "precommit-hook": "^3.0.0",
     "stylefmt": "^3.2.1",
     "stylelint": "^6.5.0",
