@@ -67,7 +67,7 @@ var config = {
   tunnel: false,
   host: 'localhost',
   port: 9000,
-  logPrefix: 'Sedona'
+  logPrefix: 'Minimo'
 };
 
 // Basic svg-sprite configuration
@@ -77,7 +77,7 @@ var svgSpriteConfig = {
     mode: {
       symbol: {     // Activate the «symbol» mode
         dest: '.',
-        sprite: 'sprite.symbol.html'
+        sprite: 'sprite.symbol.pug'
       }
     }
   },
@@ -141,12 +141,12 @@ gulp.task('clean', function (cb) {
   rimraf(path.clean, cb);
 });
 
-gulp.task('html:build', function () {
-  gulp.src(path.src.html) 
-    .pipe(rigger())
-    .pipe(gulp.dest(path.build.html))
-    .pipe(reload({stream: true}));
-});
+//gulp.task('html:build', function () {
+//  gulp.src(path.src.html)
+//    .pipe(rigger())
+//    .pipe(gulp.dest(path.build.html))
+//    .pipe(reload({stream: true}));
+//});
 
 gulp.task('htmlPug:build', function () {
   gulp.src(path.src.pug) 
@@ -154,7 +154,7 @@ gulp.task('htmlPug:build', function () {
     .pipe(pug({
       
     }))
-    .pipe(gulp.dest(path.build.html))
+    .pipe(gulp.dest(path.build.pug))
     .pipe(reload({stream: true}));
 });
 
@@ -193,7 +193,7 @@ gulp.task('image:build', function () {
   gulp.src(path.src.img) 
     .pipe(imagemin({
       progressive: true,
-      svgoPlugins: [{removeViewBox: false},{removeFill: false}],
+      svgoPlugins: [{removeViewBox: false},{removeFill: false}, {removeStyle: false}],
       use: [pngquant()],
       interlaced: true
     }))
@@ -211,7 +211,7 @@ gulp.task('imgSvg:build', function () {
     .pipe(cheerio({
       run: function ($) {
         $('[fill]').removeAttr('fill');
-        $('[style]').removeAttr('style');
+        //$('[style]').removeAttr('style');
       },
       parserOptions: { xmlMode: true }
     }))
@@ -258,7 +258,7 @@ gulp.task('build', [
   'fonts:build',
   'image:build',
   'picture:build',
-  'html:build',
+  //'html:build',
   'htmlPug:build'
 ]);
 
@@ -284,9 +284,9 @@ gulp.task('watch', function(){
   watch([path.watch.fonts], function(event, cb) {
     gulp.start('fonts:build');
   });
-  watch([path.watch.html], function(event, cb) {
-    gulp.start('html:build');
-  });
+  //watch([path.watch.html], function(event, cb) {
+  //  gulp.start('html:build');
+  //});
   watch([path.watch.pug], function(event, cb) {
     gulp.start('htmlPug:build');
   });
